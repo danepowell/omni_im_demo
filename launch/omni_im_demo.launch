@@ -1,11 +1,6 @@
 <launch>
-  <node name="omni1" pkg="phantom_omni" type="omni" output="screen" />
-  <param name="robot_description" command="cat $(find omni_description)/urdf/omni.urdf" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-    <remap from="joint_states" to="omni1_joint_states" />
-  </node>
-  <node name="omni_marker_1" pkg="omni_im_demo" type="omni_im_demo.py" required="true" output="screen" />
+  <node name="omni_im_demo_1" pkg="omni_im_demo" type="omni_im_demo.py" required="true" output="screen" />
   <param name="omni_im/topic_name" value="omni_im_demo" />
-  <node name="omni_marker_2" pkg="omni_im" type="omni_im.py" required="true" output="screen" />
+  <include file="$(find omni_im)/launch/omni_im.launch" />
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_im_demo)/cfg/omni_im_clean.rviz" required="true" />
 </launch>
