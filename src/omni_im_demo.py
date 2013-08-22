@@ -19,11 +19,12 @@ def makeControl(w, x, y, z, name, mode):
     control.interaction_mode = mode
     return control
 
-def makeMarker():
+def makeMarker(name, x):
     # create an interactive marker for our server                                               
     int_marker = InteractiveMarker()
     int_marker.header.frame_id = '/world'
-    int_marker.name = 'omni_im_demo'
+    int_marker.name = name
+    int_marker.pose.position.x = x
     int_marker.description = "Omni IM Demo"
     int_marker.scale = 0.1
 
@@ -68,6 +69,7 @@ if __name__=='__main__':
     rospy.init_node('omni_im_demo')
 
     server = InteractiveMarkerServer('omni_im_demo')
-    makeMarker()
+    makeMarker('omni_im_demo_1', -0.3)
+    makeMarker('omni_im_demo_2', 0.3)
     server.applyChanges()
     rospy.spin()
