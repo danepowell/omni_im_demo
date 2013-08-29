@@ -76,7 +76,7 @@ Visualization Manager:
       Class: rviz/InteractionCursorDisplay
       Cursor Alpha: 1
       Cursor Color: 80; 255; 20
-      Cursor Diameter: 0.1
+      Cursor Diameter: 0.05
       Enabled: true
       Name: InteractionCursorDisplay
       Show Axes: true
