@@ -1,6 +1,7 @@
 <launch>
   <node name="omni_im_demo_1" pkg="omni_im_demo" type="omni_im_demo.py" required="true" output="screen" />
   <param name="omni_im/topic_name" value="omni_im_demo" />
+  <param name="omni_im/fixed_frame" value="/world" />
   <include file="$(find omni_im)/launch/omni_im.launch" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_im_demo)/cfg/omni_im_clean.rviz" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find omni_im_demo)/cfg/omni_im_clean.rviz" required="true" output="screen" />
 </launch>

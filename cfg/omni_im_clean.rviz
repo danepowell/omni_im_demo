@@ -71,6 +71,18 @@ Visualization Manager:
         {}
       Update Interval: 0
       Value: false
+    - Axes Length: 0.1
+      Axes Radius: 0.01
+      Class: rviz/InteractionCursorDisplay
+      Cursor Alpha: 1
+      Cursor Color: 80; 255; 20
+      Cursor Diameter: 0.05
+      Enabled: true
+      Name: InteractionCursorDisplay
+      Show Axes: true
+      Show Cursor: true
+      Update Topic: /interaction_cursor/update
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
